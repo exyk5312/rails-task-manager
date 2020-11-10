@@ -2,5 +2,7 @@
 <h1>My tasks </h1>
 
 <% @tasks.each do |task| %> 
-  <p> [<%= 'x' if task.completed  %>] <%= link_to task.title, task_show_path(task)  %></p>
+  <p> [<%= 'x' if task.completed  %>] <%= link_to task.title, task_path(task)  %></p>
 <% end %>
+
+<%= link_to 'Create new task', new_task_path(params[:id]) %>
